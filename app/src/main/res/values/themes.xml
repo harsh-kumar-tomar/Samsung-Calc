@@ -6,4 +6,26 @@
     </style>
 
     <style name="Theme.Javaappversion3" parent="Base.Theme.Javaappversion3" />
+
+    <style name="ButtonStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
+
+        <item name="background">@drawable/button_circle</item>
+        <item name="backgroundTint">@null</item>
+
+        <item name="fontFamily">@font/varela_font</item>
+        <item name="android:textColor">#99aeda</item>
+        <item name="android:textSize">33sp</item>
+
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+
+        <item name="android:onClick">buttonClicked</item>
+
+    </style>
 </resources>

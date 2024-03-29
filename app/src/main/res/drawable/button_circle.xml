@@ -1,12 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--&lt;!&ndash;     <item android:state_pressed="true">&ndash;&gt;-->
+<!--&lt;!&ndash;          <shape android:shape="oval">&ndash;&gt;-->
+<!--&lt;!&ndash;               <solid android:color="#0F1517" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </shape>&ndash;&gt;-->
+<!--&lt;!&ndash;     </item>&ndash;&gt;-->
+<!--&lt;!&ndash;     <item android:state_focused="true">&ndash;&gt;-->
+<!--&lt;!&ndash;          <shape android:shape="oval">&ndash;&gt;-->
+<!--&lt;!&ndash;               <solid android:color="#1C272B" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </shape>&ndash;&gt;-->
+<!--&lt;!&ndash;     </item>&ndash;&gt;-->
+<!--&lt;!&ndash;     <item android:state_enabled="false">&ndash;&gt;-->
+<!--&lt;!&ndash;          <shape android:shape="oval">&ndash;&gt;-->
+<!--&lt;!&ndash;               <solid android:color="#0F1517" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </shape>&ndash;&gt;-->
+<!--&lt;!&ndash;     </item>&ndash;&gt;-->
+<!--     <item>-->
+<!--          <shape-->
+<!--              android:shape="oval">-->
+<!--               <solid android:color="#0F1517"/>-->
+<!--          </shape>-->
+<!--     </item>-->
 
-     <solid android:color="#191C1D" />
-     <corners android:radius="350dp"
-         />
 
+<!--</selector>-->
 
-
-</shape>
-
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#384E55">
+     <item>
+          <shape android:shape="rectangle">
+               <corners android:radius="1000dp"/>
+               <solid android:color="#0F1517"/>
+          </shape>
+     </item>
+</ripple>

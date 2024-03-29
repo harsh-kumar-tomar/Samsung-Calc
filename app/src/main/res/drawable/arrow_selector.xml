@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed/Ripple state -->
+    <item android:drawable="@drawable/arrow"
+        android:state_pressed="true"
+        android:color="#28393E" />
+
+    <!-- Default state -->
+    <item android:drawable="@drawable/arrow"
+        android:color="#0F1517" />
+</selector>

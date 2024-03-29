@@ -3,15 +3,19 @@ package com.example.javaappversion3;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 
+import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     Button but1 , but2 , but3 , but4 , but5 , but6 , but7 , but8 , but9 , but0 , but_equal , but_add , but_sub , but_mult , but_div , but_percent , but_decimal , but_C , but_delete ;
     TextView txt_answer , txt_input ;
     String datatoCalculate = "" ;
+    Logic logic;
+    HashMap<Character,Integer> signHashMap = new HashMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +34,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         currentOrientation = getResources().getConfiguration().orientation;
 
+        logic = new ViewModelProvider(this)
+                .get(Logic.class);
 
         intialize();
+        txt_input.setText(logic.getCurrentInput());
+        txt_answer.setText(logic.getResult());
+        signHashMap.put('+',1);
+        signHashMap.put('-',1);
+        signHashMap.put('/',1);
+        signHashMap.put('*',1);
+        signHashMap.put('%',1);
+
 
     }
 
@@ -75,87 +92,55 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonClicked(View view)
     {
-        Button currentButton ;
-        currentButton = (Button) view; //to get info about current button
-        String result  ;               //to store result
-        String currentButtonText = currentButton.getText().toString();
+        String currentButtonText = ((Button)view).getText().toString();
 
-        if (currentButtonText.equals("=") && !datatoCalculate.equals(""))
+        if (currentButtonText.equals("="))
         {
-            result = getResult(datatoCalculate);
-            txt_input.setText(result);
+            txt_input.setText(logic.getResult());
             txt_answer.setText("");
-
+            logic.setCurrentInput(logic.getResult());
+            logic.currentInput = new StringBuilder();
             return ;
         }
 
-        if (currentButtonText.equals("C"))
+        if (currentButtonText.charAt(0) == ('C'))
         {
             clearInput();
-
             return ;
         }
 
+        logic.setCurrentInput(currentButtonText);
+        txt_input.setText(logic.getCurrentInput());      //setting number in the input panel
 
-
-
-        datatoCalculate = datatoCalculate + currentButtonText ;
-
-        txt_input.setText(datatoCalculate);      //setting number in the input panel
-        txt_answer.setText(datatoCalculate);      //setting number in the input panel
-
-        if (!currentButton.getText().toString().equals("+") && !currentButton.getText().toString().equals("-") && !currentButton.getText().toString().equals("*") && !currentButton.getText().toString().equals("/") && !datatoCalculate.equals(""))
+        if (!signHashMap.containsKey(currentButtonText.charAt(0)))
         {
-            result = getResult(datatoCalculate);
-            printtoAnswer(result);
+            txt_answer.setText(logic.getResult());      //setting number in the input panel
         }
-
-
 
     }
 
     public void delete (View view)
     {
-        if (datatoCalculate.equals(""))
+        if (!logic.getCurrentInput().equals(""))
         {
-            return;
+            logic.deleteSingleCharacter();
+            txt_input.setText(logic.getCurrentInput());      //setting number in the input panel
+            txt_answer.setText(logic.getCurrentInput());      //setting number in the input panel
         }
-        datatoCalculate = datatoCalculate.substring(0 , datatoCalculate.length() -1 );
-        txt_input.setText(datatoCalculate);      //setting number in the input panel
-        txt_answer.setText(datatoCalculate);      //setting number in the input panel
+
     }
 
 
     public void clearInput()
     {
-        txt_input.setText("");
-        txt_answer.setText("");
-        datatoCalculate="";
-    }
-
-    public void printtoAnswer(String result)
-
-    {
-        txt_answer.setText(result);
-    }
-
-    public String getResult(String data)
-    {
-        try {
-            Context context = Context.enter();
-            context.setOptimizationLevel(-1);
-            Scriptable scriptable = context.initStandardObjects();
-
-            String finalResult = context.evaluateString(scriptable , data ,"Javascript" ,1, null).toString();
-
-            return finalResult ;
-
-        } catch (Exception e) {
-            return "error";
-        }
-
-
+        logic.currentInput= new StringBuilder();
+        txt_input.setText(logic.getCurrentInput());
+        txt_answer.setText(logic.getResult());
     }
 
 
+    public void setting(View view) {
+        ImageButton setting = (ImageButton)view;
+
+    }
 }
