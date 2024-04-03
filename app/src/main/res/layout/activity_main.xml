@@ -1,289 +1,308 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-<!--    <ImageButton-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:onClick="setting"-->
-<!--        android:background="@drawable/setting_icon"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginLeft="10dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <data>
 
+    </data>
 
-    <GridLayout
-        android:id="@+id/grid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:columnCount="4"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-
-        app:layout_constraintDimensionRatio="4:5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="1">
-
-
-        <Button
-            android:id="@+id/but_c"
-            style="@style/SideButtons"
-            android:text="C"
-            android:textColor="#DA2222" />
-
-        <Button
-            android:id="@+id/but_barackets"
-            style="@style/SideButtons"
-            android:text="()" />
-
-        <Button
-            android:id="@+id/but_percent"
-            style="@style/SideButtons"
-            android:text="%" />
-
-        <Button
-            android:id="@+id/but_divide"
-            style="@style/SideButtons"
-            android:text="/" />
-
-        <Button
-            android:id="@+id/but7"
-            style="@style/PurpleStyle"
-            android:text="7" />
-
-        <Button
-            android:id="@+id/but8"
-            style="@style/PurpleStyle"
-            android:text="8" />
-
-        <Button
-            android:id="@+id/but9"
-            style="@style/PurpleStyle"
-
-            android:text="9" />
-
-        <Button
-            android:id="@+id/but_multiply"
-            style="@style/SideButtons"
-
-            android:text="*" />
-
-        <Button
-            android:id="@+id/but4"
-            style="@style/PurpleStyle"
-
-            android:text="4" />
-
-        <Button
-            android:id="@+id/but5"
-            style="@style/PurpleStyle"
-
-            android:text="5" />
-
-        <Button
-            android:id="@+id/but6"
-            style="@style/PurpleStyle"
-
-            android:text="6"
-
-
-            />
-
-        <Button
-            android:id="@+id/but_subtract"
-            style="@style/SideButtons"
-
-            android:text="-"
-
-
-            />
-
-        <Button
-            android:id="@+id/but1"
-            style="@style/PurpleStyle"
-
-            android:text="1"
-
-            />
-
-        <Button
-            android:id="@+id/but2"
-            style="@style/PurpleStyle"
-
-            android:text="2"
-
-
-            />
-
-        <Button
-            android:id="@+id/but3"
-            style="@style/PurpleStyle"
-
-            android:text="3"
-
-
-            />
-
-        <Button
-            android:id="@+id/but_add"
-            style="@style/SideButtons"
-
-            android:text="+"
-
-
-            />
-
-        <Button
-            android:id="@+id/but_changeSign"
-            style="@style/PurpleStyle"
-
-            android:text="+/-"
-
-
-            />
-
-        <Button
-            android:id="@+id/but0"
-            style="@style/PurpleStyle"
-
-            android:text="0"
-
-
-            />
-
-        <Button
-            android:id="@+id/but_decimal"
-            style="@style/PurpleStyle"
-
-            android:text="."
-
-            />
-
-        <Button
-            android:id="@+id/but_equal"
-            style="@style/SideButtons"
-            android:background="@drawable/blue_button"
-            android:textColor="@color/white"
-            android:backgroundTint="#C151DC"
-            android:text="=" />
-
-
-    </GridLayout>
-
-
-    <TextView
-        android:id="@+id/textView_input"
-        android:layout_width="0dp"
-        android:layout_height="103dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-
-        android:fontFamily="@font/varela_font"
-        android:text=""
-        android:textAlignment="textEnd"
-        android:textColor="#99aeda"
-        android:textSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_answer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
-
-    <TextView
-
-        android:id="@+id/textView_answer"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/varela_font"
-        android:text=""
-        android:textAlignment="textEnd"
-        android:textColor="#697897"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/layout_history"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:background="#000000"
+        tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/layout_history"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toTopOf="@+id/grid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        <!--    <ImageButton-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:onClick="setting"-->
+        <!--        android:background="@drawable/setting_icon"-->
+        <!--        android:layout_marginTop="10dp"-->
+        <!--        android:layout_marginLeft="10dp"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
-<!--        <Button-->
-<!--            android:id="@+id/but_rotate"-->
-<!--            android:layout_width="25dp"-->
-<!--            android:layout_height="25dp"-->
-<!--            android:layout_marginStart="30dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:background="@drawable/rotate"-->
-<!--            android:fontFamily="@font/varela_font"-->
-<!--            android:onClick="rotate"-->
-<!--            android:text=""-->
-<!--            android:textColor="#fff"-->
-<!--            android:textSize="32sp"-->
-
-<!--            />-->
-
-        <Button
-            android:id="@+id/but_delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:background= "@drawable/arrow"
-
-            android:fontFamily="@font/varela_font"
-
-
-            android:onClick="delete"
-            android:text=""
-            android:textColor="#fff"
-            android:textSize="32sp" />
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="1dp"
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:columnCount="4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:background="?android:attr/listDivider"
+            android:layout_marginBottom="10dp"
+
+            app:layout_constraintDimensionRatio="4:5"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_below="@id/but_delete"
-            tools:layout_editor_absoluteY="145dp" />
+
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="1">
+
+
+            <Button
+                android:id="@+id/but_c"
+                style="@style/SideButtons"
+                android:text="C"
+                android:textColor="#DA2222" />
+
+            <Button
+                android:id="@+id/but_barackets"
+                style="@style/SideButtons"
+                android:text="()" />
+
+            <Button
+                android:id="@+id/but_percent"
+                style="@style/SideButtons"
+                android:text="%" />
+
+            <Button
+                android:id="@+id/but_divide"
+                style="@style/SideButtons"
+                android:text="/" />
+
+            <Button
+                android:id="@+id/but7"
+                style="@style/PurpleStyle"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/but8"
+                style="@style/PurpleStyle"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/but9"
+                style="@style/PurpleStyle"
+
+                android:text="9" />
+
+            <Button
+                android:id="@+id/but_multiply"
+                style="@style/SideButtons"
+
+                android:text="*" />
+
+            <Button
+                android:id="@+id/but4"
+                style="@style/PurpleStyle"
+
+                android:text="4" />
+
+            <Button
+                android:id="@+id/but5"
+                style="@style/PurpleStyle"
+
+                android:text="5" />
+
+            <Button
+                android:id="@+id/but6"
+                style="@style/PurpleStyle"
+
+                android:text="6"
+
+
+                />
+
+            <Button
+                android:id="@+id/but_subtract"
+                style="@style/SideButtons"
+
+                android:text="-"
+
+
+                />
+
+            <Button
+                android:id="@+id/but1"
+                style="@style/PurpleStyle"
+
+                android:text="1"
+
+                />
+
+            <Button
+                android:id="@+id/but2"
+                style="@style/PurpleStyle"
+
+                android:text="2"
+
+
+                />
+
+            <Button
+                android:id="@+id/but3"
+                style="@style/PurpleStyle"
+
+                android:text="3"
+
+
+                />
+
+            <Button
+                android:id="@+id/but_add"
+                style="@style/SideButtons"
+
+                android:text="+"
+
+
+                />
+
+            <Button
+                android:id="@+id/but_changeSign"
+                style="@style/PurpleStyle"
+
+                android:text="+/-"
+
+
+                />
+
+            <Button
+                android:id="@+id/but0"
+                style="@style/PurpleStyle"
+
+                android:text="0"
+
+
+                />
+
+            <Button
+                android:id="@+id/but_decimal"
+                style="@style/PurpleStyle"
+
+                android:text="."
+
+                />
+
+            <Button
+                android:id="@+id/but_equal"
+                style="@style/SideButtons"
+                android:background="@drawable/blue_button"
+                android:textColor="@color/white"
+                android:backgroundTint="#C151DC"
+                android:text="=" />
+
+
+        </GridLayout>
+
+
+        <TextView
+            android:id="@+id/textView_input"
+            android:layout_width="0dp"
+            android:layout_height="103dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/varela_font"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="#99aeda"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.223"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeMaxTextSize="60sp"
+            android:autoSizeStepGranularity="2sp" />
+
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
 
 
 
+            app:layout_constraintBottom_toTopOf="@+id/layout_history"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <TextView
 
-    </RelativeLayout>
+                android:id="@+id/textView_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+
+                android:maxLines="1"
+                android:fontFamily="@font/varela_font"
+                android:text="hello"
+                android:textColor="#697897"
+                android:textSize="30dp"
+                />
+
+        </HorizontalScrollView>
 
 
 
+        <RelativeLayout
+            android:id="@+id/layout_history"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toTopOf="@+id/grid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        <Button-->
+            <!--            android:id="@+id/but_rotate"-->
+            <!--            android:layout_width="25dp"-->
+            <!--            android:layout_height="25dp"-->
+            <!--            android:layout_marginStart="30dp"-->
+            <!--            android:layout_marginTop="20dp"-->
+            <!--            android:background="@drawable/rotate"-->
+            <!--            android:fontFamily="@font/varela_font"-->
+            <!--            android:onClick="rotate"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="#fff"-->
+            <!--            android:textSize="32sp"-->
+
+            <!--            />-->
+
+            <Button
+                android:id="@+id/but_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/arrow"
+
+                android:fontFamily="@font/varela_font"
+
+
+                android:onClick="delete"
+                android:text=""
+                android:textColor="#fff"
+                android:textSize="32sp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@id/but_delete"
+                tools:layout_editor_absoluteY="145dp" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
